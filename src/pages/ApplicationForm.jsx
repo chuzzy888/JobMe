@@ -109,7 +109,7 @@ function ApplicationForm() {
           </div>
           <button
             type="submit"
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-md"
+            className="bgb text-white hover:bg-secondary/80 px-4 py-2 rounded-md"
           >
             Apply Now
           </button>

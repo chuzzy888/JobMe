@@ -3,7 +3,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase"; // Import Firebase auth
-import { CiLogout } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
 
 function Navbar() {
@@ -30,9 +29,9 @@ function Navbar() {
             <img src={logo} alt="jobme" className="w-24" />
           </div>
           <div className="space-x-4 md:block hidden">
-            <a href="#" className="txtb hover:text-blue-400">
+            <Link to={"/"} className="txtb hover:text-blue-400">
               Home
-            </a>
+            </Link>
 
             <Link to={"/jobs"} className="text-zinc-700 hover:text-zinc-900">
               Job Listings
@@ -95,15 +94,24 @@ function Navbar() {
           </button>
         </div>
         <nav className="flex flex-col p-4">
-          <a href="#" className="block text-gray-600 hover:text-blue-600 mb-4">
+          <Link
+            to={"/"}
+            className="block text-gray-600 hover:text-blue-600 mb-4"
+          >
             Home
-          </a>
-          <a href="#" className="block text-gray-600 hover:text-blue-600 mb-4">
+          </Link>
+          <Link
+            to={"jobs"}
+            className="block text-gray-600 hover:text-blue-600 mb-4"
+          >
+            Job Listing
+          </Link>
+          <Link
+            to={"contact"}
+            className="block text-gray-600 hover:text-blue-600 mb-4"
+          >
             Contact
-          </a>
-          <a href="#" className="block text-gray-600 hover:text-blue-600 mb-4">
-            Services
-          </a>
+          </Link>
           <a href="#" className="block text-gray-600 hover:text-blue-600 mb-4">
             Help
           </a>
