@@ -190,7 +190,7 @@ function Admin() {
                 Select Job Type
               </option>
               <option value="Full-time">Full-time</option>
-              <option value="Part-time">Part-time</option>
+              <option value="Part Time">Part-time</option>
               <option value="Internship">Internship</option>
             </select>
           </div>
@@ -242,7 +242,7 @@ function Admin() {
               <option value="" disabled>
                 Select Industry
               </option>
-              <option value="Tech">Tech</option>
+              <option value="Technology">Tech</option>
               <option value="Finance">Finance</option>
               <option value="Healthcare">Healthcare</option>
               <option value="Education">Education</option>

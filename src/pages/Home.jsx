@@ -16,7 +16,7 @@ function Home() {
   return (
     <div>
       <div
-        className="bg-cover bg-center md:h-[75vh] h-[50vh] flex flex-col bg "
+        className="bg-cover bg-center h-[65vh]  flex flex-col bg "
         style={{ backgroundImage: `url(${hero})` }}
       >
         <div className="flex-grow flex flex-col justify-center items-center text-center text-white px-4">
@@ -24,7 +24,31 @@ function Home() {
             FIND JOBS AND HIRE AMAZING <br />
             TALENTS!
           </h1>
-          <div className="grid md:grid-cols-5 grid-cols-2 gap-4 md:gap-2 md:place-content-center md:place-items-center  md:p-10 p-4 bar rounded-lg">
+
+          {/* DESKTOP */}
+
+          <div className="  md:p-10 p-4 bar rounded-lg md:flex justify-between items-center gap-8 hidden">
+            <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
+              <option>Select Job Type</option>
+            </select>
+            <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
+              <option>Select Industry</option>
+            </select>
+            <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
+              <option>Select Mode of Work</option>
+            </select>
+            <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
+              <option>Select Location</option>
+            </select>
+            <div className="md:col-span-1 col-span-full flex justify-center  ">
+              <button className="bgb text-white px-4 py-2 rounded-lg outline-none shadow-md">
+                Find Jobs
+              </button>
+            </div>
+          </div>
+
+          {/* MOBILE */}
+          <div className="grid md:grid-cols-5 grid-cols-2 gap-4 md:gap-2 md:place-content-center md:place-items-center  md:p-10 p-4 bar rounded-lg md:hidden">
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Job Type</option>
             </select>

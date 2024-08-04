@@ -4,7 +4,6 @@ function ApplicationForm() {
   return (
     <div>
       <div className="bg-[#DBF7FD] p-6 md:w-5/6 w-11/12 my-5 mx-auto rounded-lg shadow-md">
-        <h2 className="text-lg font-semibold mb-4">Job Application</h2>
         <form>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>

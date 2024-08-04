@@ -96,8 +96,8 @@ function JobListings() {
             onChange={handleFilterChange}
           >
             <option value="">Select Job Type</option>
-            <option value="Full-time">Full-time</option>
-            <option value="Part-time">Part-time</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
             <option value="Internship">Internship</option>
           </select>
           <select
@@ -106,7 +106,7 @@ function JobListings() {
             onChange={handleFilterChange}
           >
             <option value="">Select Industry</option>
-            <option value="Tech">Tech</option>
+            <option value="Technology">Technology</option>
             <option value="Finance">Finance</option>
             <option value="Healthcare">Healthcare</option>
             <option value="Education">Education</option>
@@ -141,8 +141,11 @@ function JobListings() {
             <option value="Tanzania">Tanzania</option>
             <option value="Algeria">Algeria</option>
           </select>
-          <button className="outline px-2 bgb text-white" onClick={filterJobs}>
-            <CiFilter className="text-2xl" />
+          <button
+            className="border border-gray-300 px-2 bgb text-white"
+            onClick={filterJobs}
+          >
+            <CiFilter className="text-2xl " />
           </button>
         </div>
 
@@ -200,7 +203,7 @@ function JobListings() {
             <option value="Algeria">Algeria</option>
           </select>
           <button
-            className="bg-primary font-bold text-white bgb rounded-lg p-2  md:col-span-1 col-span-full mx-28 md:mx-0 flex justify-center mt-2 md:mt-0"
+            className="bg-primary font-bold text-white bgb rounded-lg p-2  md:col-span-1 col-span-full mx-24 md:mx-0 flex justify-center mt-2 md:mt-0"
             onClick={filterJobs}
           >
             Find Job
@@ -274,9 +277,11 @@ function JobListings() {
                       <span className="text-lg font-semibold mb-4 md:mb-0 md:mr-4">
                         ${job.salary}
                       </span>
-                      <button className="bg-[#0DCAF0] text-[#FFFFFF] text-sm rounded p-1 px-1.5">
-                        Apply Now
-                      </button>
+                      <Link to={"/apply"}>
+                        <button className="bg-[#0DCAF0] text-[#FFFFFF] text-sm rounded p-1 px-1.5">
+                          Apply Now
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -296,7 +301,7 @@ function JobListings() {
             <button
               key={i + 1}
               onClick={() => paginate(i + 1)}
-              className={`mx-1 px-4 py-2 border rounded ${
+              className={`mx-1 px-4 py-2 border rounded md:block hidden ${
                 i + 1 === currentPage ? "bgb text-white" : ""
               }`}
             >

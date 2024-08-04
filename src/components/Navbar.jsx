@@ -100,6 +100,24 @@ function Navbar() {
           >
             Home
           </Link>
+
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="text-zinc-700 hover:text-zinc-900 mb-4"
+            >
+              <span className="flex items-center gap-2">
+                {" "}
+                <FiLogOut />
+                Log out
+              </span>
+            </button>
+          ) : (
+            <Link className="text-zinc-700 hover:text-zinc-900" to={"/login"}>
+              {" "}
+              Log In
+            </Link>
+          )}
           <Link
             to={"jobs"}
             className="block text-gray-600 hover:text-blue-600 mb-4"
@@ -112,9 +130,6 @@ function Navbar() {
           >
             Contact
           </Link>
-          <a href="#" className="block text-gray-600 hover:text-blue-600 mb-4">
-            Help
-          </a>
         </nav>
       </div>
     </div>
