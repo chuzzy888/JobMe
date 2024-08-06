@@ -129,12 +129,12 @@ function JobDetails() {
             </>
           )}
         </div>
-        <div className="md:w-2/3 md:pl-6 py-5">
-          <h3 className="text-lg font-semibold mb-2 ft">Job Description</h3>
+        <div className="md:w-2/3 md:pl-6 py-5 p-5">
           {loading ? (
             <Skeleton count={5} />
           ) : (
             <>
+              <h3 className="text-lg font-semibold mb-2 ft">Job Description</h3>
               <p className="text-muted-foreground mb-4 md:w-6/12 ">
                 {job.jobDescription}
               </p>
@@ -168,54 +168,60 @@ function JobDetails() {
         </div>
       </div>
       <div className="p-6 bg-background rounded-lg  md:w-5/6 md:mx-auto">
-        <h2 className="text-xl font-bold mb-4 text-center ft">Related Jobs</h2>
-        <p className="text-muted-foreground mb-6 text-center">
-          Lorem ipsum dolor sit amet consectetur. Risus tempus eget egestas
-          dolor ut. At interdum amet id duis pulvinar quis massa elit. Amet quam
-          commodo est pulvinar vitae.
-        </p>
         {loading ? (
           <Skeleton count={5} />
         ) : relatedJobs.length === 0 ? (
           <p className="text-center txtb">No related jobs found.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {relatedJobs.map((relatedJob) => (
-              <div
-                key={relatedJob.id}
-                className="bg-card rounded-lg p-4 shadow outline outline-gray-200"
-              >
-                <h3 className="text-lg font-semibold">{relatedJob.jobTitle}</h3>
-                <span className="flex items-center gap-2">
-                  <img
-                    src={dat}
-                    alt=""
-                    className="h-4 w-4 rounded-full object-cover"
-                  />
-                  <p className="text-muted-foreground">
-                    Posted {relatedJob.createdAt.toDate().toDateString()}
-                  </p>
-                </span>
-                <p className="txtb">{relatedJob.location}</p>
-                <p className="text-muted-foreground">${relatedJob.salary}</p>
-                <div className="flex items-center mt-2">
-                  <img
-                    alt={`${relatedJob.companyName} Logo`}
-                    src={relatedJob.companyLogoURL || "default-logo-url"}
-                    className="h-4 w-4 rounded-full"
-                  />
-                  <span className="ml-2">{relatedJob.companyName}</span>
-                  <span className="text-muted-foreground">
-                    | {relatedJob.location}
+          <div>
+            <h2 className="text-xl font-bold mb-4 text-center ft">
+              Related Jobs
+            </h2>
+            <p className="text-muted-foreground mb-6 text-center">
+              Lorem ipsum dolor sit amet consectetur. Risus tempus eget egestas
+              dolor ut. At interdum amet id duis pulvinar quis massa elit. Amet
+              quam commodo est pulvinar vitae.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {relatedJobs.map((relatedJob) => (
+                <div
+                  key={relatedJob.id}
+                  className="bg-card rounded-lg p-4 shadow outline outline-gray-200"
+                >
+                  <h3 className="text-lg font-semibold">
+                    {relatedJob.jobTitle}
+                  </h3>
+                  <span className="flex items-center gap-2">
+                    <img
+                      src={dat}
+                      alt=""
+                      className="h-4 w-4 rounded-full object-cover"
+                    />
+                    <p className="text-muted-foreground">
+                      Posted {relatedJob.createdAt.toDate().toDateString()}
+                    </p>
                   </span>
+                  <p className="txtb">{relatedJob.location}</p>
+                  <p className="text-muted-foreground">${relatedJob.salary}</p>
+                  <div className="flex items-center mt-2">
+                    <img
+                      alt={`${relatedJob.companyName} Logo`}
+                      src={relatedJob.companyLogoURL || "default-logo-url"}
+                      className="h-4 w-4 rounded-full"
+                    />
+                    <span className="ml-2">{relatedJob.companyName}</span>
+                    <span className="text-muted-foreground">
+                      | {relatedJob.location}
+                    </span>
+                  </div>
+                  <Link to={`/job/${relatedJob.id}`}>
+                    <button className="mt-4 bgb text-white hover:bg-primary/80 px-4 py-2 rounded">
+                      Apply Now
+                    </button>
+                  </Link>
                 </div>
-                <Link to={`/job/${relatedJob.id}`}>
-                  <button className="mt-4 bgb text-white hover:bg-primary/80 px-4 py-2 rounded">
-                    Apply Now
-                  </button>
-                </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>

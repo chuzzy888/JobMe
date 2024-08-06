@@ -16,7 +16,7 @@ function Home() {
   return (
     <div>
       <div
-        className="bg-cover bg-center h-[65vh]  flex flex-col bg "
+        className="bg-cover bg-center md:h-[65vh] h-[45vh] flex flex-col bg "
         style={{ backgroundImage: `url(${hero})` }}
       >
         <div className="flex-grow flex flex-col justify-center items-center text-center text-white px-4">

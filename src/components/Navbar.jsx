@@ -26,7 +26,9 @@ function Navbar() {
       <header className="bg-white shadow-md p-5 ">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <div>
-            <img src={logo} alt="jobme" className="w-24" />
+            <Link to={"/"}>
+              <img src={logo} alt="jobme" className="w-24" />
+            </Link>
           </div>
           <div className="space-x-4 md:block hidden">
             <Link to={"/"} className="txtb hover:text-blue-400">
@@ -83,7 +85,7 @@ function Navbar() {
       <div
         className={`fixed inset-y-0 right-0 transform ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out bg-white w-64 shadow-lg z-40 lg:hidden`}
+        } transition-transform duration-300 ease-in-out bg-white w-64 h-72 shadow-lg z-40 lg:hidden`}
       >
         <div className="flex justify-end p-4">
           <button
@@ -113,7 +115,7 @@ function Navbar() {
               </span>
             </button>
           ) : (
-            <Link className="text-zinc-700 hover:text-zinc-900" to={"/login"}>
+            <Link className=" hover:text-zinc-900 mb-4 txtb" to={"/login"}>
               {" "}
               Log In
             </Link>

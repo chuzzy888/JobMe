@@ -17,6 +17,7 @@ import SignUp from "./pages/SignUp";
 import Register from "./pages/Register";
 import ApplicationForm from "./pages/ApplicationForm";
 import Admin from "./pages/Admin";
+import Modal from "./components/Modal";
 
 function AppContent() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AppContent() {
     "/signup",
     "/register",
     "/admin",
+    "/modal",
   ];
   const shouldHideNavbarAndFooter = hideNavbarAndFooterRoutes.includes(
     location.pathname
@@ -43,6 +45,7 @@ function AppContent() {
         <Route path="/register" element={<Register />} />
         <Route path="/apply" element={<ApplicationForm />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/modal" element={<Modal />} />
       </Routes>
       {!shouldHideNavbarAndFooter && <Footer />}
     </div>
