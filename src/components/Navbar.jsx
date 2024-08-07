@@ -44,9 +44,12 @@ function Navbar() {
             </Link>
           </div>
           <div className="space-x-4 md:block hidden">
-            <a href="#" className="bgb text-white px-4 py-2 rounded-xl ">
+            <Link
+              to={"/pricing"}
+              className="bgb text-white px-4 py-2 rounded-xl "
+            >
               Post Jobs
-            </a>
+            </Link>
 
             {user ? (
               <button
@@ -85,7 +88,7 @@ function Navbar() {
       <div
         className={`fixed inset-y-0 right-0 transform ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out bg-white w-64 h-72 shadow-lg z-40 lg:hidden`}
+        } transition-transform duration-300 ease-in-out bg-white w-44 h-80 shadow-lg z-40 lg:hidden`}
       >
         <div className="flex justify-end p-4">
           <button
@@ -125,6 +128,9 @@ function Navbar() {
             className="block text-gray-600 hover:text-blue-600 mb-4"
           >
             Job Listing
+          </Link>
+          <Link to={"/pricing"} className="txtb mb-4 ">
+            Post Jobs
           </Link>
           <Link
             to={"contact"}

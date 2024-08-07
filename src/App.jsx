@@ -18,6 +18,7 @@ import Register from "./pages/Register";
 import ApplicationForm from "./pages/ApplicationForm";
 import Admin from "./pages/Admin";
 import Modal from "./components/Modal";
+import Pricing from "./components/Pricing";
 
 function AppContent() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function AppContent() {
         <Route path="/apply" element={<ApplicationForm />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/modal" element={<Modal />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
       {!shouldHideNavbarAndFooter && <Footer />}
     </div>

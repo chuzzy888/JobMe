@@ -11,6 +11,7 @@ import cvu from "../assets/images/cvu.png";
 import e1 from "../assets/images/e1.png";
 import e2 from "../assets/images/e2.png";
 import e3 from "../assets/images/e3.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -30,20 +31,45 @@ function Home() {
           <div className="  md:p-10 p-4 bar rounded-lg md:flex justify-between items-center gap-8 hidden">
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Job Type</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Internship">Internship</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Industry</option>
+              <option value="Technology">Technology</option>
+              <option value="Finance">Finance</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Education">Education</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Retail">Retail</option>
+              <option value="Hospitality">Hospitality</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Mode of Work</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Onsite">Onsite</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Location</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Algeria">Algeria</option>
             </select>
             <div className="md:col-span-1 col-span-full flex justify-center  ">
-              <button className="bgb text-white px-4 py-2 rounded-lg outline-none shadow-md">
-                Find Jobs
-              </button>
+              <Link to={"/jobs"}>
+                <button className="bgb text-white px-4 py-2 rounded-lg outline-none shadow-md">
+                  Find Jobs
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -51,20 +77,45 @@ function Home() {
           <div className="grid md:grid-cols-5 grid-cols-2 gap-4 md:gap-2 md:place-content-center md:place-items-center  md:p-10 p-4 bar rounded-lg md:hidden">
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Job Type</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Internship">Internship</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Industry</option>
+              <option value="Technology">Technology</option>
+              <option value="Finance">Finance</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Education">Education</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Retail">Retail</option>
+              <option value="Hospitality">Hospitality</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
-              <option>Select Mode of Work</option>
+              <option>Select work mode</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Onsite">Onsite</option>
             </select>
             <select className="bg-white text-black px-4 py-2 rounded-lg outline-none shadow-md mb-2">
               <option>Select Location</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Algeria">Algeria</option>
             </select>
             <div className="md:col-span-1 col-span-full flex justify-center mt-2 md:mt-0 ">
-              <button className="bgb text-white px-4 py-2 rounded-lg outline-none shadow-md">
-                Find Jobs
-              </button>
+              <Link to={"/jobs"}>
+                <button className="bgb text-white px-4 py-2 rounded-lg outline-none shadow-md">
+                  Find Jobs
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -84,12 +135,13 @@ function Home() {
                 Find Millions of Job Opportunities Right for You!
               </h2>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur. Duis sed ornare
-                adipiscing sed platea integer habitant. Eros quis hac amet
-                dignissim morbi vulputate eriva it commodo mi. Est mauris diam
-                donec magna. Sit cras fringilla integer sed praesent urna amet.
-                Donec suspendisse quis sed placerat lacus euipii pretium duis
-                semper est ac nec ultricie.
+                Welcome to JobMe, your gateway to an abundance of job
+                opportunities across various industries. Explore a wide range of
+                roles tailored to your skills and career aspirations. Whether
+                you're starting your career or seeking new challenges, JobMe
+                connects you with employers eager to find talent like yours.
+                Begin your job search today and take the next step toward your
+                dream job. At JobMe, your future starts here.
               </p>
               <button className="bgb text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
                 Discover More
@@ -103,12 +155,14 @@ function Home() {
                 Looking for the World's Best Talents?
               </h2>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur. Duis sed ornare
-                adipiscing sed platea integer habitant. Eros quis hac amet
-                dignissim morbi vulputate eriva it commodo mi. Est mauris diam
-                donec magna. Sit cras fringilla integer sed praesent urna amet.
-                Donec suspendisse quis sed placerat lacus euipii pretium duis
-                semper est ac nec ultricie.
+                Welcome to JobMe, where top talents meet the best opportunities.
+                Our platform is designed to connect you with exceptional
+                professionals across diverse industries. Discover skilled
+                individuals ready to bring innovation and excellence to your
+                organization. Whether you're hiring for specialized roles or
+                building a dynamic team, JobMe is your trusted partner in talent
+                acquisition. Let us help you find the perfect match for your
+                business needs.
               </p>
               <button className="bgb text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
                 Discover More
@@ -133,10 +187,12 @@ function Home() {
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-4">Latest Job Listing</h2>
           <p className="text-muted-foreground mb-6">
-            Lorem ipsum dolor sit amet consectetur. Augue lacus senectus at amet
-            viverra ultrices eget. Tincidunt tristique viverra facilisis arcu
-            non nulla faucibus. Adipiscing blandit nunc lobortis pretium. Tempus
-            viverra vitae nisl imperdiet auctor mattis viverra egestas mattis.
+            Explore our most recent job listings at JobMe. Whether you're
+            seeking a new challenge or a step up in your career, we have a
+            variety of opportunities just for you. Discover roles across
+            multiple industries and locations, tailored to your skills and
+            aspirations. Stay ahead with JobMe and find your next great
+            opportunity today.
           </p>
         </div>
 
@@ -225,12 +281,13 @@ function Home() {
               Get Jobs that match your Qualifications and Skill Set
             </h2>
             <p className="text-[#000000] md:text-lg text-sm">
-              Lorem ipsum dolor sit amet consectetur. Dolor euismod mattis nulla
-              aliquam a. In ac in ornare donec consectetur. Nam semper gravida
-              enim dolor velit aliquam ut ac. Lorem ipsum dolor sit amet
-              consectetur. Dolor euismod mattis nulla aliquam a. In ac in ornare
-              donec consectetur. Nam semper gravida enim dolor velit aliquam ut
-              ac.
+              At JobMe, we understand the importance of finding a job that
+              aligns with your qualifications and skill set. Our platform is
+              tailored to connect you with opportunities that suit your
+              professional profile. Explore personalized job matches, crafted to
+              help you excel in your career. Join us and discover a range of
+              positions that fit your expertise, ensuring a perfect match for
+              your career aspirations.
             </p>
             <div>
               <button className="bg-[#0DCAF0] text-[#FFFFFF] p-2 px-2 text-sm rounded-xl">
@@ -263,9 +320,10 @@ function Home() {
                 alt="Client 1"
               />
               <p className="text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet consectetur. Etiam elit nisl aliquam
-                tempor purus ac. Vestibulum eu euismod enim elit. Nunc phasellus
-                aliquet eu gravida massa vel.”
+                “JobMe transformed my job search experience. The platform
+                connected me with top employers in my field, making the process
+                smooth and efficient. I'm now in a role that perfectly matches
+                my skills and aspirations.”
               </p>
               <h3 className="txtb font-semibold">Alice Shata</h3>
               <p className="text-muted-foreground">South Africa</p>
@@ -277,12 +335,13 @@ function Home() {
                 alt="Client 2"
               />
               <p className="text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet consectetur. Etiam elit nisl aliquam
-                tempor purus ac. Vestibulum eu euismod enim elit. Nunc phasellus
-                aliquet eu gravida massa vel.”
+                “Thanks to JobMe, I found a fantastic job opportunity that I
+                wouldn't have discovered otherwise. The personalized job matches
+                and user-friendly interface made my job hunt stress-free and
+                successful.”
               </p>
               <h3 className="txtb font-semibold">Blard James</h3>
-              <p className="text-muted-foreground">United Kingdom</p>
+              <p className="text-muted-foreground">Kenya</p>
             </div>
             <div className="bg-[#F5F3F3] p-6 rounded-lg shadow-md text-center">
               <img
@@ -291,9 +350,10 @@ function Home() {
                 alt="Client 3"
               />
               <p className="text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet consectetur. Etiam elit nisl aliquam
-                tempor purus ac. Vestibulum eu euismod enim elit. Nunc phasellus
-                aliquet eu gravida massa vel.”
+                “I highly recommend JobMe for anyone looking to advance their
+                career. The platform's extensive job listings and easy
+                application process helped me land my dream job in no time. I'm
+                grateful for the support and resources JobMe provides.”
               </p>
               <h3 className="txtb font-semibold">Jide Oba</h3>
               <p className="text-muted-foreground">Nigeria</p>

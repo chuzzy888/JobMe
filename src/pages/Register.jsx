@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase"; // Import Firebase auth
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Oval } from "react-loader-spinner";
 import lgb from "../assets/images/rg.png";
 import gg from "../assets/images/gg.png";
 import fb from "../assets/images/fb.png";
@@ -12,6 +13,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
@@ -20,17 +22,20 @@ function Register() {
       setError("Passwords do not match");
       return;
     }
+    setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to home page after successful signup
+      navigate("/");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="flex items-center justify-center h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${lgb})` }}
     >
       <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg w-full md:px-20 max-w-xl my-2 md:mx-0 mx-5">
@@ -93,8 +98,15 @@ function Register() {
               </a>
             </div>
           </div>
-          <button className="bgb text-[#FFFFFF] hover:bg-primary/80 w-full p-2 rounded-lg">
-            Sign Up
+          <button
+            className="bgb text-[#FFFFFF] hover:bg-primary/80 w-full p-2 rounded-lg flex justify-center items-center"
+            disabled={loading}
+          >
+            {loading ? (
+              <Oval height={20} width={20} color="white" />
+            ) : (
+              "Sign Up"
+            )}
           </button>
         </form>
         <p className="text-center text-zinc-600 mt-4">Or continue with</p>
@@ -111,9 +123,9 @@ function Register() {
         </div>
         <p className="text-center text-zinc-600 mt-4">
           Already have an account?{" "}
-          <a href="/login" className="txtb hover:underline">
+          <Link to={"/login"} className="txtb hover:underline">
             Log In
-          </a>
+          </Link>
         </p>
       </div>
     </div>

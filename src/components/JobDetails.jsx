@@ -178,9 +178,12 @@ function JobDetails() {
               Related Jobs
             </h2>
             <p className="text-muted-foreground mb-6 text-center">
-              Lorem ipsum dolor sit amet consectetur. Risus tempus eget egestas
-              dolor ut. At interdum amet id duis pulvinar quis massa elit. Amet
-              quam commodo est pulvinar vitae.
+              Discover a selection of jobs related to your field and interests.
+              Our curated listings offer opportunities that align with your
+              skills and career goals. Find the perfect job that suits your
+              expertise and take the next step in your professional journey with
+              JobMe. Explore now and connect with employers looking for talent
+              like yours.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {relatedJobs.map((relatedJob) => (

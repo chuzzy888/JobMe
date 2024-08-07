@@ -6,6 +6,10 @@ import { formatDistanceToNow } from "date-fns";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import bgg from "../assets/images/bgg.png";
+import t1 from "../assets/images/t1.png";
+import t2 from "../assets/images/t2.png";
+import t5 from "../assets/images/t5.png";
+import t6 from "../assets/images/t6.png";
 import { CiFilter } from "react-icons/ci";
 
 function JobListings() {
@@ -86,7 +90,7 @@ function JobListings() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className="">
       <div className="p-4 bg-background">
         <img src={bgg} alt="" className="w-full" />
         <div className="md:flex space-x-4 mb-4 hidden bar py-5 px-5">
@@ -317,6 +321,40 @@ function JobListings() {
           </button>
         </div>
       </div>
+      <section className="py-12 text-center">
+        <h2 className="text-3xl font-bold mx-2 mb-4">
+          Trusted by Our Partners
+        </h2>
+        <p className="text-muted-foreground mb-8 mx-2">
+          Our product is trusted by leading companies across various industries.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <img
+            undefinedhidden="true"
+            alt="Partner Logo 1"
+            src={t1}
+            className="rounded-full md:h-20 md:w-20 h-10 w-10 mx-auto border-4 md:border-8 border-[#0dcaf0]"
+          />
+          <img
+            undefinedhidden="true"
+            alt="Partner Logo 2"
+            src={t2}
+            className="rounded-full md:h-20 md:w-20 h-10 w-10  mx-auto border-4 md:border-8 border-[#0dcaf0]"
+          />
+          <img
+            undefinedhidden="true"
+            alt="Partner Logo 3"
+            src={t6}
+            className="rounded-full md:h-20 md:w-20 h-10 w-10  mx-auto border-4 md:border-8 border-[#0dcaf0]"
+          />
+          <img
+            undefinedhidden="true"
+            alt="Partner Logo 4"
+            src={t5}
+            className="rounded-full md:h-20 md:w-20 h-10 w-10 mx-auto border-4 md:border-8 border-[#0dcaf0]"
+          />
+        </div>
+      </section>
     </div>
   );
 }

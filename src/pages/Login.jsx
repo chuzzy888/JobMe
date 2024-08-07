@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase"; // Import Firebase auth
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Oval } from "react-loader-spinner";
 import lgb from "../assets/images/login.png";
 import gg from "../assets/images/gg.png";
 import fb from "../assets/images/fb.png";
@@ -11,15 +12,19 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to home page after successful login
+      navigate("/");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,8 +79,11 @@ function Login() {
               </a>
             </div>
           </div>
-          <button className="bgb text-[#FFFFFF] hover:bg-primary/80 w-full p-2 rounded-lg">
-            Log In
+          <button
+            className="bgb text-[#FFFFFF] hover:bg-primary/80 w-full p-2 rounded-lg flex justify-center items-center"
+            disabled={loading}
+          >
+            {loading ? <Oval height={20} width={20} color="white" /> : "Log In"}
           </button>
         </form>
         <p className="text-center text-zinc-600 mt-4">Or continue with</p>
@@ -92,9 +100,9 @@ function Login() {
         </div>
         <p className="text-center text-zinc-600 mt-4">
           Don't have an account?{" "}
-          <a href="/register" className="txtb hover:underline">
+          <Link to={"/register"} className="txtb hover:underline">
             Sign Up
-          </a>
+          </Link>
         </p>
       </div>
     </div>
