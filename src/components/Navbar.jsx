@@ -102,6 +102,7 @@ function Navbar() {
           <Link
             to={"/"}
             className="block text-gray-600 hover:text-blue-600 mb-4"
+            onClick={() => setSidebarOpen(false)}
           >
             Home
           </Link>
@@ -111,14 +112,21 @@ function Navbar() {
               onClick={handleLogout}
               className="text-zinc-700 hover:text-zinc-900 mb-4"
             >
-              <span className="flex items-center gap-2">
+              <span
+                className="flex items-center gap-2"
+                onClick={() => setSidebarOpen(false)}
+              >
                 {" "}
                 <FiLogOut />
                 Log out
               </span>
             </button>
           ) : (
-            <Link className=" hover:text-zinc-900 mb-4 txtb" to={"/login"}>
+            <Link
+              className=" hover:text-zinc-900 mb-4 txtb"
+              to={"/login"}
+              onClick={() => setSidebarOpen(false)}
+            >
               {" "}
               Log In
             </Link>
@@ -126,15 +134,21 @@ function Navbar() {
           <Link
             to={"jobs"}
             className="block text-gray-600 hover:text-blue-600 mb-4"
+            onClick={() => setSidebarOpen(false)}
           >
             Job Listing
           </Link>
-          <Link to={"/pricing"} className="txtb mb-4 ">
+          <Link
+            to={"/pricing"}
+            className="txtb mb-4 "
+            onClick={() => setSidebarOpen(false)}
+          >
             Post Jobs
           </Link>
           <Link
             to={"contact"}
             className="block text-gray-600 hover:text-blue-600 mb-4"
+            onClick={() => setSidebarOpen(false)}
           >
             Contact
           </Link>
